@@ -9,6 +9,7 @@
 
 html {
   font-family: 'Open Sans', sans-serif;
+
 }
 
 button:hover {
@@ -25,6 +26,7 @@ label[type=text] {
   display: flex;
   margin-top: 0;
   margin-bottom: 0;
+  margin-right: 0;
 }
 
 /* ---- LEFT-BOX ---- */
@@ -69,13 +71,16 @@ label[type=text] {
 .right-whole-side {
   display: flex;
   flex-direction: column;
+  /* margin-right: 0; */
+
 }
  .top-form-box   {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 60vh;
-  width: 75vh;
+  height: 50vh;
+  width: 160vh;
+  margin-right: 0;
   background-color: #A9AAD2;
 }
 
@@ -89,7 +94,7 @@ label[type=text] {
   margin-top: 1%;
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 30%;
 }
 
 .title-input {
@@ -126,6 +131,6 @@ label[type=text] {
 .grid-box {
   display: flex;
   background-color: #EAEAF4;
-  height: 40vh;
-  width: 75vh;
+  height: 50vh;
+  width: 160vh;
 }
