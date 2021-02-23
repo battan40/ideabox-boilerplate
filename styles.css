@@ -104,7 +104,7 @@ label[type=text] {
 }
 
 .body-input {
-  height: 8vh;
+  height: 10vh;
   border: 2px solid #595CA6;
   font-family: 'Open Sans', sans-serif;
   resize: none;
@@ -112,20 +112,42 @@ label[type=text] {
 }
 
 .save {
-  margin: 3% 0 3% 0;
+  margin: 5% 0 3% 0;
   background-color: #353567;
   color: #EAEAF4;
-  padding: 2%;
-  font-weight: bold;
-}
-
-.searchInput {
-  padding: 3%;
+  height: 6vh;
+  font-weight: 500;
+  font-size: 1.3em;
+  border:  2px solid #595CA6;
+  border-radius: 3px;
 }
 
 .mini-search-box {
-
+  display: flex;
 }
+
+.magnifying-glass-button {
+  height: 6vh;
+  width: 8vh;
+  padding: 2.5%;
+  background-color: #353567;
+  color: #EAEAF4;
+  border:  2px solid #595CA6;
+  border-radius: 3px;
+  border-right: none;
+}
+
+.search-input {
+  border:  2px solid #595CA6;
+  border-radius: 3px;
+  height: 6vh;
+  width: 63vh;
+  border-left: none;
+  font-size: 1em;
+  color: #EAEAF4;
+  padding-left: 2%;
+}
+
 /* ---- IDEAS-GRID ---- */
 
 .grid-box {
@@ -133,4 +155,11 @@ label[type=text] {
   background-color: #EAEAF4;
   height: 50vh;
   width: 160vh;
+}
+
+.ideas-display {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
 }
