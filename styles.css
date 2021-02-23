@@ -93,15 +93,26 @@ label[type=text] {
 }
 
 .title-input {
-
+  border:  2px solid #595CA6;
+  padding: 2%;
+  border-radius: 3px;
 }
+
 .body-input {
   height: 8vh;
-  border:
-
-  /* padding: 5%; */
+  border: 2px solid #595CA6;
+  font-family: 'Open Sans', sans-serif;
+  resize: none;
+  border-radius: 3px;
 }
 
+.save {
+  margin: 3% 0 3% 0;
+  background-color: #353567;
+  color: #EAEAF4;
+  padding: 2%;
+  font-weight: bold;
+}
 /* ---- IDEAS-GRID ---- */
 
 .grid-box {
