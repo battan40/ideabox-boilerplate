@@ -35,7 +35,7 @@ label[type=text] {
   flex-direction: column;
   background: #1F1F3D;
   color: #E9E9F3;
-  height: 100vh;
+  height: 150vh;
   width: 37vh;
 }
 
@@ -152,7 +152,7 @@ label[type=text] {
 
 .grid-box {
   background-color: #EAEAF4;
-  height: 50vh;
+  height: 100vh;
   width: 160vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -161,19 +161,53 @@ label[type=text] {
 }
 
 .delete-idea,
-.idea-favorite {
-  height: 75%;
+.idea-favorite,
+.idea-comment {
+  height: 85%;
 }
 
 .ideas-display {
-  height: 20vh;
+  height: 36vh;
   width: 35vh;
+  border: 2px solid #1F1F3D;
+
 }
 
 .idea-header {
   background-color: #353567;
   display: flex;
   justify-content: space-between;
-  height: 20%;
+  align-items: center;
+  height: 12.5%;
   width: 100%;
+}
+
+.idea-card-inner {
+  width: 100%;
+  height: 75%;
+  background-color: #FFFFFF;
+}
+
+.idea-box-footer {
+  background-color: #5356A4;
+  display: flex;
+  justify-content: flex-start;
+  height: 12.5%;
+  width: 100%;
+}
+
+.idea-title,
+.idea-body {
+  padding: 5% 0 0 5%;
+  color: #1F1F3D;
+}
+
+.idea-body {
+  font-size: 1.2em;
+}
+
+.idea-comment {
+  padding-top: 2%;
+  color: #E9E9F3;
+  font-weight: bold;
 }
