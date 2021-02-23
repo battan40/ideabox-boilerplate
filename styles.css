@@ -113,6 +113,14 @@ label[type=text] {
   padding: 2%;
   font-weight: bold;
 }
+
+.searchInput {
+  padding: 3%;
+}
+
+.mini-search-box {
+
+}
 /* ---- IDEAS-GRID ---- */
 
 .grid-box {
