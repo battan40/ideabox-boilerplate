@@ -21,6 +21,12 @@ label[type=text] {
   font-size: 1em;
 }
 
+.main {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /* ---- LEFT-BOX ---- */
 .left-box {
   display: flex;
@@ -30,6 +36,7 @@ label[type=text] {
   height: 100vh;
   width: 37vh;
 }
+
 
 .left-title {
   font-weight: bold;
@@ -46,6 +53,7 @@ label[type=text] {
 
 .show-starred-button {
   font-size: 1.3em;
+  font-weight: bold;
   padding: 3% 5% 3% 5%;
   margin: 0 0 10% 5%;
   background-color: #5356A4;
@@ -58,5 +66,12 @@ label[type=text] {
 }
 
 /* ---- RIGHT-FORM ---- */
+ .form-box   {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 75vh;
+  background-color: #A9AAD2;
+}
 
 /* ---- IDEAS-GRID ---- */
