@@ -151,15 +151,17 @@ label[type=text] {
 /* ---- IDEAS-GRID ---- */
 
 .grid-box {
-  display: flex;
   background-color: #EAEAF4;
   height: 50vh;
   width: 160vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
 }
 
 .ideas-display {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
+  height: 15vh;
+  width: 20vh;
+  display: flex;
 }
