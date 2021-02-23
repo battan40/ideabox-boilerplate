@@ -160,8 +160,20 @@ label[type=text] {
   padding: 20px;
 }
 
+.delete-idea,
+.idea-favorite {
+  height: 75%;
+}
+
 .ideas-display {
-  height: 15vh;
-  width: 20vh;
+  height: 20vh;
+  width: 35vh;
+}
+
+.idea-header {
+  background-color: #353567;
   display: flex;
+  justify-content: space-between;
+  height: 20%;
+  width: 100%;
 }
