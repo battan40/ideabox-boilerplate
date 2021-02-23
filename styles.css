@@ -33,22 +33,28 @@ label[type=text] {
 
 .left-title {
   font-weight: bold;
-  border-bottom: 1px solid #5356A4;
   padding: 1% 63% 10% 2%;
   margin: 5% 25% 5% 1%;
 }
 
 .left-filter {
+  font-weight: light;
+  margin-top: 7%;
   display: flex;
-  padding: 1% 5% 10% 2%;
+  padding: 1% 5% 10% 5%;
 }
 
-.show-starred {
+.show-starred-button {
   font-size: 1.3em;
   padding: 3% 5% 3% 5%;
-  margin: 3% 5% 3% 5%;
+  margin: 0 0 10% 5%;
   background-color: #5356A4;
   color: #E9E9F3;
+}
+
+.filter-starred {
+  border-top: 1px solid #5356A4;
+  border-bottom: 1px solid #5356A4;
 }
 
 /* ---- RIGHT-FORM ---- */
