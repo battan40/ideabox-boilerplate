@@ -9,7 +9,6 @@
 
 html {
   font-family: 'Open Sans', sans-serif;
-
 }
 
 button:hover {
@@ -38,7 +37,6 @@ label[type=text] {
   height: 150vh;
   width: 37vh;
 }
-
 
 .left-title {
   font-weight: bold;
@@ -71,8 +69,6 @@ label[type=text] {
 .right-whole-side {
   display: flex;
   flex-direction: column;
-  /* margin-right: 0; */
-
 }
  .top-form-box   {
   display: flex;
