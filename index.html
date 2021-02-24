@@ -1,12 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
+    <meta charset="utf-8">
     <title>IdeaBox</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
-  <body>
-
+  <body class="main">
+    <section class="left-box">
+      <h1 class="left-title">IdeaBox</h1>
+      <div class="filter-starred">
+        <h4 class="left-filter">Filter Starred Ideas</h4>
+        <button type="button" class="show-starred-button" id="showStarred">Show Starred Ideas</button>
+      </div>
+    </section>
+    <div class="right-whole-side">
+      <section class="top-form-box">
+        <form class="form-box">
+          <label class="label">Title</label>
+          <input type="text" class="title-input" id="titleInput">
+          <label class="label">Body</label>
+          <textarea type="text" class="body-input" id="bodyInput"></textarea>
+          <button type="button" class="save" id="save">Save</button>
+          <div class="mini-search-box">
+            <button class="magnifying-glass-button" id="magnifyingGlass"><img class="mini-magnifier" src="./assets/search.svg" alt="Miniature magnifying glass icon"></button>
+            <input type="search" class="search-input" id="searchInput" placeholder="Search ideas"></input>
+          </div>
+       </form>
+      </section>
+      <section class="grid-box">
+        <article class="ideas-display" id="ideasGrid">
+          <section class="idea-header">
+            <img class="idea-favorite" id="favoriteButton" src="./assets/star.svg" alt="A star for favoriting">
+            <img class="delete-idea" id="deleteButton" src="./assets/delete.svg" alt="An X for deleting ideas">
+          </section>
+          <section class="idea-card-inner">
+            <h3 class="idea-title">TITLE</h3>
+            <p class="idea-body">Kayla's Edudate Idea Should Happen. I'm serious.</p>
+          </section>
+          <section class="idea-box-footer">
+            <img class="idea-comment-img" id="commentButton" src="./assets/comment.svg" alt="A comment button">
+            <p class="idea-comment">Comment</p>
+          </section>
+        </article>
+        <article class="ideas-display" id="ideasGrid">
+          <section class="idea-header">
+            <img class="idea-favorite" id="favoriteButton" src="./assets/star.svg" alt="A star for favoriting">
+            <img class="delete-idea" id="deleteButton" src="./assets/delete.svg" alt="An X for deleting ideas">
+          </section>
+          <section class="idea-card-inner">
+            <h3 class="idea-title">TITLE</h3>
+            <p class="idea-body">Kayla's Edudate Idea Should Happen. I'm serious.</p>
+          </section>
+          <section class="idea-box-footer">
+            <img class="idea-comment-img" id="commentButton" src="./assets/comment.svg" alt="A comment button">
+            <p class="idea-comment">Comment</p>
+          </section>
+        </article>
+        <article class="ideas-display" id="ideasGrid">
+          <section class="idea-header">
+            <img class="idea-favorite" id="favoriteButton" src="./assets/star.svg" alt="A star for favoriting">
+            <img class="delete-idea" id="deleteButton" src="./assets/delete.svg" alt="An X for deleting ideas">
+          </section>
+          <section class="idea-card-inner">
+            <h3 class="idea-title">TITLE</h3>
+            <p class="idea-body">Kayla's Edudate Idea Should Happen. I'm serious.</p>
+          </section>
+          <section class="idea-box-footer">
+            <img class="idea-comment-img" id="commentButton" src="./assets/comment.svg" alt="A comment button">
+            <p class="idea-comment">Comment</p>
+          </section>
+        </article>
+        <article class="ideas-display" id="ideasGrid">
+          <section class="idea-header">
+            <img class="idea-favorite" id="favoriteButton" src="./assets/star.svg" alt="A star for favoriting">
+            <img class="delete-idea" id="deleteButton" src="./assets/delete.svg" alt="An X for deleting ideas">
+          </section>
+          <section class="idea-card-inner">
+            <h3 class="idea-title">TITLE</h3>
+            <p class="idea-body">Kayla's Edudate Idea Should Happen. I'm serious.</p>
+          </section>
+          <section class="idea-box-footer">
+            <img class="idea-comment-img" id="commentButton" src="./assets/comment.svg" alt="A comment button">
+            <p class="idea-comment">Comment</p>
+          </section>
+        </article>
+      </section>
+    </div>
     <script src="./src/main.js"></script>
   </body>
 </html>
