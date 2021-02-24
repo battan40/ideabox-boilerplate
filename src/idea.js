@@ -3,11 +3,11 @@ class Idea {
     this.title = title;
     this.body = body;
     this.id = generateRdmId();
-    this.favorite = false;
+    this.star = false;
   }
 
   saveToStorage() {
-    var stringifiedObj = JSOn.stringify(this);
+    var stringifiedObj = JSON.stringify(this);
     localStorage.setItem(this.id, stringifiedObj);
   }
 
@@ -16,10 +16,10 @@ class Idea {
   }
 
   updateIdea() {
-    if(this.favorite){
-      this.favorite = false;
+    if(this.star){
+      this.star = false;
     }else{
-      this.favorite = true;
+      this.star = true;
     }
   }
 
@@ -31,5 +31,3 @@ class Idea {
     }
   }
 }
-
-module.exports = Idea;
