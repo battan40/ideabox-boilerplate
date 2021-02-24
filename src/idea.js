@@ -2,8 +2,9 @@ class Idea {
   constructor(title, body) {
     this.title = title;
     this.body = body;
-    this.id = generateRdmId();
+    //this.id = generateRdmId();
     this.star = false;
+    this.id = 1;
   }
 
   saveToStorage() {
@@ -23,11 +24,11 @@ class Idea {
     }
   }
 
-  generateRdmId(array){
-    if(array.length - 1 >= 1){
-      var rdmId = 1;
-    }else{
-      var rdmId = array[array.length - 1].id + 1;
-    }
-  }
+  // generateRdmId(array){
+  //   if(array.length - 1 >= 1){
+  //     var rdmId = 1;
+  //   }else{
+  //     var rdmId = array[array.length - 1].id + 1;
+  //   }
+  // }
 }
