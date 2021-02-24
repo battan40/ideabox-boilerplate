@@ -2,9 +2,8 @@ class Idea {
   constructor(title, body) {
     this.title = title;
     this.body = body;
-    //this.id = generateRdmId();
-    this.star = false;
     this.id = 1;
+    this.star = false;
   }
 
   saveToStorage() {
