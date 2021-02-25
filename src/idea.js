@@ -16,17 +16,17 @@ class Idea {
   }
 
   updateIdea() {
-    if(this.star){
+    if (this.star) {
       this.star = false;
-    }else{
+    } else {
       this.star = true;
     }
   }
-
-  // generateRdmId(array){
-  //   if(array.length - 1 >= 1){
+//looking for a better solution for this problem
+  // generateRdmId(array) {
+  //   if (array.length - 1 >= 1) {
   //     var rdmId = 1;
-  //   }else{
+  //   } else {
   //     var arrayLength = arrayLength.length - 1;
   //     var rdmId = array[arrayLength].id + 1;
   //   }

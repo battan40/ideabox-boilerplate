@@ -13,22 +13,18 @@ bodyInput.addEventListener('keyup', checkInputFields);
 
 
 function createIdeaCard() {
-  if (titleInput.value !== "" && bodyInput.value !== "") {
-    var newIdea = new Idea();
-    newIdea = createNewIdea();
-    updateIdeaArray(newIdea);
+    var newIdea = createNewIdea();
+    addNewIdea(newIdea);
     renderIdeaCard();
     clearInputFields();
-  }
 }
 
 function createNewIdea() {
   var newIdea = new Idea(titleInput.value, bodyInput.value);
-  //newIdea.generateRdmId(savedIdeas);
   return newIdea;
 }
 
-function updateIdeaArray(newIdea) {
+function addNewIdea(newIdea) {
     savedIdeas.push(newIdea);
   }
 
