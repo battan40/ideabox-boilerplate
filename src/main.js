@@ -2,6 +2,8 @@ var saveButton = document.querySelector('#save');
 var titleInput = document.querySelector('#titleInput');
 var bodyInput = document.querySelector('#bodyInput');
 var ideaParent = document.querySelector('#ideaParent');
+var ideasGrid = document.querySelector('#ideasGrid');
+
 
 var savedIdeas = [];
 
@@ -10,7 +12,9 @@ saveButton.addEventListener('click', createIdeaCard);
 window.addEventListener('load', checkInputFields);
 titleInput.addEventListener('keyup', checkInputFields);
 bodyInput.addEventListener('keyup', checkInputFields);
-
+ideaParent.addEventListener('click', function() {
+  deleteIdea(event);
+});
 
 function createIdeaCard() {
     event.preventDefault();
@@ -75,4 +79,11 @@ function addButtonState() {
 function removeButtonState() {
   saveButton.classList.remove("disabled-button");
   saveButton.innerHTML = "Save";
+}
+
+function deleteIdea(event){
+  event.preventDefault();
+  if(event.target.classList.contains("delete-idea")){
+    event.target.closest("article").remove();
+  }
 }
