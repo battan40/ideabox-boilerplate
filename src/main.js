@@ -39,7 +39,7 @@ function renderIdeaCard() {
   ideaParent.innerHTML = "";
   for (var i = 0; i < savedIdeas.length; i++) {
     ideaParent.innerHTML +=
-    `<article class="ideas-display" id="ideasGrid">
+    `<article class="ideas-display" id="${savedIdeas[i].id}">
       <section class="idea-header">
         <img class="idea-favorite" id="favoriteButton" src="./assets/star.svg" alt="A star for favoriting">
         <img class="delete-idea" id="deleteButton" src="./assets/delete.svg" alt="An X for deleting ideas">
@@ -65,7 +65,7 @@ function checkInputFields() {
   if(/\S/.test(titleInput.value) && /\S/.test(bodyInput.value)){
     saveButton.disabled = false;
     removeButtonState();
-  }else{
+  } else {
     saveButton.disabled = true;
     addButtonState();
   }
@@ -81,9 +81,14 @@ function removeButtonState() {
   saveButton.innerHTML = "Save";
 }
 
-function deleteIdea(event){
-  event.preventDefault();
-  if(event.target.classList.contains("delete-idea")){
+function deleteIdea(event) {
+  event.preventDefault()
+  if (event.target.classList.contains("delete-idea")) {
+    updateIdeaArray(event.target.parentElement.parentElement.id);
     event.target.closest("article").remove();
   }
+}
+
+function updateIdeaArray(id) {
+
 }
