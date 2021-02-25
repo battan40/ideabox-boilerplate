@@ -2,12 +2,12 @@ class Idea {
   constructor(title, body) {
     this.title = title;
     this.body = body;
-    this.id = generateRdmId();
-    this.favorite = false;
+    this.id = 1;
+    this.star = false;
   }
 
   saveToStorage() {
-    var stringifiedObj = JSOn.stringify(this);
+    var stringifiedObj = JSON.stringify(this);
     localStorage.setItem(this.id, stringifiedObj);
   }
 
@@ -16,20 +16,19 @@ class Idea {
   }
 
   updateIdea() {
-    if(this.favorite){
-      this.favorite = false;
-    }else{
-      this.favorite = true;
+    if (this.star) {
+      this.star = false;
+    } else {
+      this.star = true;
     }
   }
-
-  generateRdmId(array){
-    if(array.length - 1 >= 1){
-      var rdmId = 1;
-    }else{
-      var rdmId = array[array.length - 1].id + 1;
-    }
-  }
+//looking for a better solution for this problem
+  // generateRdmId(array) {
+  //   if (array.length - 1 >= 1) {
+  //     var rdmId = 1;
+  //   } else {
+  //     var arrayLength = arrayLength.length - 1;
+  //     var rdmId = array[arrayLength].id + 1;
+  //   }
+  // }
 }
-
-module.exports = Idea;
