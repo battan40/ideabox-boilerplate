@@ -13,6 +13,9 @@ html {
 
 button:hover {
   border: none;
+}
+
+button {
   cursor: pointer;
 }
 
@@ -116,6 +119,14 @@ label[type=text] {
   font-size: 1.3em;
   border:  2px solid #595CA6;
   border-radius: 3px;
+  cursor: pointer;
+}
+
+.disabled-button {
+  background-color: #EAEAF4;
+  color: #BFBFDD;
+  cursor: not-allowed;
+
 }
 
 .mini-search-box {
