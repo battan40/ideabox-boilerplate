@@ -56,7 +56,6 @@ function clearInputFields() {
 }
 
 function checkInputFields() {
-  //if (titleInput.value !== "" && bodyInput.value !== "" && ) {
   if(/\S/.test(titleInput.value) && /\S/.test(bodyInput.value)){
     saveButton.disabled = false;
     removeButtonState();
