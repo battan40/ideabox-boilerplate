@@ -27,7 +27,6 @@ function createIdeaCard() {
 
 function createNewIdea() {
   var newIdea = new Idea(titleInput.value, bodyInput.value, savedIdeas);
-  console.log(savedIdeas);
   return newIdea;
 }
 
@@ -90,5 +89,10 @@ function deleteIdea(event) {
 }
 
 function updateIdeaArray(id) {
-
+  for (var i = 0; i < savedIdeas.length; i++) {
+    if(parseInt(savedIdeas[i].id) === parseInt(id)) {
+      savedIdeas.splice(i, 1);
+      return;
+    }
+  }
 }
