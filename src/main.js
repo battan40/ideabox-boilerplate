@@ -13,6 +13,7 @@ bodyInput.addEventListener('keyup', checkInputFields);
 
 
 function createIdeaCard() {
+    event.preventDefault();
     var newIdea = createNewIdea();
     addNewIdea(newIdea);
     renderIdeaCard();
@@ -21,7 +22,8 @@ function createIdeaCard() {
 }
 
 function createNewIdea() {
-  var newIdea = new Idea(titleInput.value, bodyInput.value);
+  var newIdea = new Idea(titleInput.value, bodyInput.value, savedIdeas);
+  console.log(savedIdeas);
   return newIdea;
 }
 

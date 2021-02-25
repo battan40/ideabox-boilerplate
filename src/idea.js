@@ -1,8 +1,8 @@
 class Idea {
-  constructor(title, body) {
+  constructor(title, body, array) {
     this.title = title;
     this.body = body;
-    this.id = 1;
+    this.id = this.generateRdmId(array);
     this.star = false;
   }
 
@@ -22,13 +22,14 @@ class Idea {
       this.star = true;
     }
   }
-//looking for a better solution for this problem
-  // generateRdmId(array) {
-  //   if (array.length - 1 >= 1) {
-  //     var rdmId = 1;
-  //   } else {
-  //     var arrayLength = arrayLength.length - 1;
-  //     var rdmId = array[arrayLength].id + 1;
-  //   }
-  // }
+
+  generateRdmId(array) {
+    if (array.length === 0) {
+      var rdmId = 1;
+    } else {
+      var arrayLength = array.length - 1;
+      var rdmId = array[arrayLength].id + 1;
+    }
+    return rdmId;
+  }
 }
