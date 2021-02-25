@@ -17,6 +17,7 @@ function createIdeaCard() {
     addNewIdea(newIdea);
     renderIdeaCard();
     clearInputFields();
+    checkInputFields();
 }
 
 function createNewIdea() {
@@ -55,7 +56,8 @@ function clearInputFields() {
 }
 
 function checkInputFields() {
-  if (titleInput.value !== "" && bodyInput.value !== "") {
+  //if (titleInput.value !== "" && bodyInput.value !== "" && ) {
+  if(/\S/.test(titleInput.value) && /\S/.test(bodyInput.value)){
     saveButton.disabled = false;
     removeButtonState();
   }else{
