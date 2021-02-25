@@ -7,6 +7,9 @@ var savedIdeas = [];
 
 
 saveButton.addEventListener('click', createIdeaCard);
+window.addEventListener('load', checkInputFields);
+titleInput.addEventListener('keyup', checkInputFields);
+bodyInput.addEventListener('keyup', checkInputFields);
 
 
 function createIdeaCard() {
@@ -15,6 +18,7 @@ function createIdeaCard() {
     newIdea = createNewIdea();
     updateIdeaArray(newIdea);
     renderIdeaCard();
+    clearInputFields();
   }
 }
 
@@ -25,11 +29,8 @@ function createNewIdea() {
 }
 
 function updateIdeaArray(newIdea) {
-  console.log(savedIdeas.includes(newIdea.title) + " new idea inclues");
-  // if (!savedIdeas.includes(newIdea.title) && !savedIdeas.includes(newIdea.body)){
     savedIdeas.push(newIdea);
   }
-// }
 
 function renderIdeaCard() {
   ideaParent.innerHTML = "";
@@ -50,4 +51,29 @@ function renderIdeaCard() {
       </section>
     </article>`
   }
+}
+
+function clearInputFields() {
+  titleInput.value  = "";
+  bodyInput.value = "";
+}
+
+function checkInputFields() {
+  if (titleInput.value !== "" && bodyInput.value !== "") {
+    saveButton.disabled = false;
+    removeButtonState();
+  }else{
+    saveButton.disabled = true;
+    addButtonState();
+  }
+}
+
+function addButtonState() {
+  saveButton.classList.add("disabled-button");
+  saveButton.innerHTML = "Enter valid idea";
+}
+
+function removeButtonState() {
+  saveButton.classList.remove("disabled-button");
+  saveButton.innerHTML = "Save";
 }
