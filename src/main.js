@@ -2,17 +2,20 @@ var saveButton = document.querySelector('#save');
 var titleInput = document.querySelector('#titleInput');
 var bodyInput = document.querySelector('#bodyInput');
 var ideaParent = document.querySelector('#ideaParent');
+var ideasGrid = document.querySelector('#ideasGrid');
 
 var savedIdeas = [];
-
 
 saveButton.addEventListener('click', createIdeaCard);
 window.addEventListener('load', checkInputFields);
 titleInput.addEventListener('keyup', checkInputFields);
 bodyInput.addEventListener('keyup', checkInputFields);
-
+ideaParent.addEventListener('click', function() {
+  checkTarget(event);
+});
 
 function createIdeaCard() {
+    event.preventDefault();
     var newIdea = createNewIdea();
     addNewIdea(newIdea);
     renderIdeaCard();
@@ -21,7 +24,7 @@ function createIdeaCard() {
 }
 
 function createNewIdea() {
-  var newIdea = new Idea(titleInput.value, bodyInput.value);
+  var newIdea = new Idea(titleInput.value, bodyInput.value, savedIdeas);
   return newIdea;
 }
 
@@ -33,7 +36,7 @@ function renderIdeaCard() {
   ideaParent.innerHTML = "";
   for (var i = 0; i < savedIdeas.length; i++) {
     ideaParent.innerHTML +=
-    `<article class="ideas-display" id="ideasGrid">
+    `<article class="ideas-display" id="${savedIdeas[i].id}">
       <section class="idea-header">
         <img class="idea-favorite" id="favoriteButton" src="./assets/star.svg" alt="A star for favoriting">
         <img class="delete-idea" id="deleteButton" src="./assets/delete.svg" alt="An X for deleting ideas">
@@ -59,7 +62,7 @@ function checkInputFields() {
   if(/\S/.test(titleInput.value) && /\S/.test(bodyInput.value)){
     saveButton.disabled = false;
     removeButtonState();
-  }else{
+  } else {
     saveButton.disabled = true;
     addButtonState();
   }
@@ -73,4 +76,45 @@ function addButtonState() {
 function removeButtonState() {
   saveButton.classList.remove("disabled-button");
   saveButton.innerHTML = "Save";
+}
+
+function checkTarget(event) {
+  event.preventDefault()
+  if (event.target.classList.contains("delete-idea")) {
+    deleteIdea(event);
+  } else if (event.target.classList.contains("idea-favorite")) {
+    favoriteIdea(event);
+  }
+}
+
+function deleteIdea(event) {
+  updateIdeaArray(event.target.parentElement.parentElement.id);
+  event.target.closest("article").remove();
+}
+
+function favoriteIdea(event) {
+  var ideaArrayIndex = findIdeaIndex(event.target.parentElement.parentElement.id);
+  savedIdeas[ideaArrayIndex].updateIdea();
+  if (savedIdeas[ideaArrayIndex].star) {
+    event.target.src = "./assets/star-active.svg";
+  } else {
+    event.target.src = "./assets/star.svg";
+  }
+}
+
+function findIdeaIndex(id) {
+  for (var i = 0; i < savedIdeas.length; i++) {
+    if(parseInt(savedIdeas[i].id) === parseInt(id)) {
+      return i;
+    }
+  }
+}
+
+function updateIdeaArray(id) {
+  for (var i = 0; i < savedIdeas.length; i++) {
+    if(parseInt(savedIdeas[i].id) === parseInt(id)) {
+      savedIdeas.splice(i, 1);
+      return;
+    }
+  }
 }
