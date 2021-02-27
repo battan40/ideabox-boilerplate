@@ -175,18 +175,26 @@ function retrieveAllStorage() {
 
 function filterIdeas() {
   event.preventDefault();
+  if (showFavoriteIdeas) {
+    showsFilteredIdeas(filterFavorites());
+  } else {
+    showsFilteredIdeas(savedIdeas);
+  }
+}
+
+function showsFilteredIdeas(array) {
   if (searchInput.value !== ""){
     var filteredIdeas = [];
-    for(var i = 0; i < savedIdeas.length; i++)
+    for(var i = 0; i < array.length; i++)
     {
-      if(savedIdeas[i].title.includes(searchInput.value)) {
-        filteredIdeas.push(savedIdeas[i]);
-      } else if (savedIdeas[i].body.includes(searchInput.value)) {
-        filteredIdeas.push(savedIdeas[i]);
+      if(array[i].title.includes(searchInput.value)) {
+        filteredIdeas.push(array[i]);
+      } else if (array[i].body.includes(searchInput.value)) {
+        filteredIdeas.push(array[i]);
       }
     }
     renderIdeaCard(filteredIdeas);
   } else {
-    renderIdeaCard(savedIdeas);
+    renderIdeaCard(array);
   }
 }
