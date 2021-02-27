@@ -67,17 +67,22 @@ function findFavorites() {
   event.preventDefault();
   showFavoriteIdeas = !showFavoriteIdeas;
   if (showFavoriteIdeas) {
-    var starredIdeas = [];
-    for (var i = 0; i < savedIdeas.length; i++) {
-      if(savedIdeas[i].star){
-        starredIdeas.push(savedIdeas[i]);
-      }
-    }
+    var starredIdeas = filterFavorites();
     renderIdeaCard(starredIdeas);
   } else {
     renderIdeaCard(savedIdeas);
   }
   changeStarButtonText();
+}
+
+function filterFavorites() {
+  var starredIdeas = [];
+  for (var i = 0; i < savedIdeas.length; i++) {
+    if(savedIdeas[i].star){
+      starredIdeas.push(savedIdeas[i]);
+    }
+  }
+  return starredIdeas;
 }
 
 function changeStarButtonText() {
