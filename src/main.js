@@ -7,7 +7,7 @@ var ideasGrid = document.querySelector('#ideasGrid');
 var savedIdeas = [];
 
 saveButton.addEventListener('click', createIdeaCard);
-window.addEventListener('load', checkInputFields);
+window.addEventListener('load', retrieveAllStorage);
 titleInput.addEventListener('keyup', checkInputFields);
 bodyInput.addEventListener('keyup', checkInputFields);
 ideaParent.addEventListener('click', function() {
@@ -18,32 +18,33 @@ function createIdeaCard() {
     event.preventDefault();
     var newIdea = createNewIdea();
     addNewIdea(newIdea);
-    renderIdeaCard();
+    renderIdeaCard(savedIdeas);
     clearInputFields();
     checkInputFields();
 }
 
 function createNewIdea() {
-  var newIdea = new Idea(titleInput.value, bodyInput.value, savedIdeas);
+  var newIdea = new Idea(titleInput.value, bodyInput.value);
   return newIdea;
 }
 
 function addNewIdea(newIdea) {
     savedIdeas.push(newIdea);
+    newIdea.saveToStorage();
   }
 
-function renderIdeaCard() {
+function renderIdeaCard(array) {
   ideaParent.innerHTML = "";
-  for (var i = 0; i < savedIdeas.length; i++) {
+  for (var i = 0; i < array.length; i++) {
     ideaParent.innerHTML +=
-    `<article class="ideas-display" id="${savedIdeas[i].id}">
+    `<article class="ideas-display" id="${array[i].id}">
       <section class="idea-header">
         <img class="idea-favorite" id="favoriteButton" src="./assets/star.svg" alt="A star for favoriting">
         <img class="delete-idea" id="deleteButton" src="./assets/delete.svg" alt="An X for deleting ideas">
       </section>
       <section class="idea-card-inner">
-        <h3 class="idea-title">${savedIdeas[i].title}</h3>
-        <p class="idea-body">${savedIdeas[i].body}</p>
+        <h3 class="idea-title">${array[i].title}</h3>
+        <p class="idea-body">${array[i].body}</p>
       </section>
       <section class="idea-box-footer">
         <img class="idea-comment-img" id="commentButton" src="./assets/comment.svg" alt="A comment button">
@@ -90,6 +91,7 @@ function checkTarget(event) {
 function deleteIdea(event) {
   updateIdeaArray(event.target.parentElement.parentElement.id);
   event.target.closest("article").remove();
+
 }
 
 function favoriteIdea(event) {
@@ -113,8 +115,23 @@ function findIdeaIndex(id) {
 function updateIdeaArray(id) {
   for (var i = 0; i < savedIdeas.length; i++) {
     if(parseInt(savedIdeas[i].id) === parseInt(id)) {
+      savedIdeas[i].deleteFromStorage();
       savedIdeas.splice(i, 1);
       return;
     }
   }
+}
+
+
+function retrieveAllStorage() {
+  checkInputFields()
+  cardIDs = Object.keys(localStorage);
+  for (i = 0; i < cardIDs.length; i++) {
+    var parsed = JSON.parse(localStorage.getItem(cardIDs[i]));
+    console.log(parsed);
+    var newIdea = new Idea(parsed.title, parsed.body, parsed.id);
+    savedIdeas.push(newIdea);
+  }
+  console.log(savedIdeas)
+  renderIdeaCard(savedIdeas);
 }
