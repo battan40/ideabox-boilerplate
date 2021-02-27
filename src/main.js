@@ -170,9 +170,7 @@ function retrieveAllStorage() {
 
 function filterIdeas() {
   event.preventDefault();
-  console.log(searchInput.value);
   if (searchInput.value !== ""){
-    console.log("Im here");
     var filteredIdeas = [];
     for(var i = 0; i < savedIdeas.length; i++)
     {
