@@ -66,12 +66,7 @@ function renderIdeaCard(array) {
 function findFavorites() {
   event.preventDefault();
   showFavoriteIdeas = !showFavoriteIdeas;
-  if (showFavoriteIdeas) {
-    var starredIdeas = filterFavorites();
-    renderIdeaCard(starredIdeas);
-  } else {
-    renderIdeaCard(savedIdeas);
-  }
+  filterIdeas();
   changeStarButtonText();
 }
 
