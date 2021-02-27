@@ -75,6 +75,15 @@ function findFavorites() {
   } else {
     renderIdeaCard(savedIdeas);
   }
+  changeStarButtonText();
+}
+
+function changeStarButtonText() {
+  if (showFavoriteIdeas) {
+    showFavoriteButton.innerText = "Show All Ideas";
+  } else {
+    showFavoriteButton.innerText = "Show Starred Ideas";
+  }
 }
 
 function clearInputFields() {
