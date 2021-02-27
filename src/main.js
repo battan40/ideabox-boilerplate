@@ -34,12 +34,17 @@ function addNewIdea(newIdea) {
   }
 
 function renderIdeaCard(array) {
+  console.log(array);
   ideaParent.innerHTML = "";
   for (var i = 0; i < array.length; i++) {
+    var starImg = "./assets/star.svg";
+    if (array[i].star) {
+      starImg = "./assets/star-active.svg";
+    }
     ideaParent.innerHTML +=
     `<article class="ideas-display" id="${array[i].id}">
       <section class="idea-header">
-        <img class="idea-favorite" id="favoriteButton" src="./assets/star.svg" alt="A star for favoriting">
+        <img class="idea-favorite" id="favoriteButton" src="${starImg}" alt="A star for favoriting">
         <img class="delete-idea" id="deleteButton" src="./assets/delete.svg" alt="An X for deleting ideas">
       </section>
       <section class="idea-card-inner">
@@ -128,10 +133,8 @@ function retrieveAllStorage() {
   cardIDs = Object.keys(localStorage);
   for (i = 0; i < cardIDs.length; i++) {
     var parsed = JSON.parse(localStorage.getItem(cardIDs[i]));
-    console.log(parsed);
-    var newIdea = new Idea(parsed.title, parsed.body, parsed.id);
-    savedIdeas.push(newIdea);
+    var newIdea = new Idea(parsed.title, parsed.body, parsed.id, parsed.star);
+    savedIdeas.unshift(newIdea);
   }
-  console.log(savedIdeas)
   renderIdeaCard(savedIdeas);
 }
