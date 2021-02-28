@@ -22,8 +22,9 @@ bodyInput.addEventListener('keyup', checkInputFields);
 ideaParent.addEventListener('click', function() {
   checkTarget(event);
 });
-showFavoriteButton.addEventListener("click", findFavorites);
+showFavoriteButton.addEventListener('click', findFavorites);
 searchInput.addEventListener('keyup', filterIdeas);
+takeMeBackButton.addEventListener('click', showMain);
 
 
 function createIdeaCard() {
@@ -206,4 +207,10 @@ function showCommentForm() {
   commentForm.classList.remove('hidden');
   leftBox.classList.add('hidden');
   rightSide.classList.add('hidden');
+}
+
+function showMain() {
+  commentForm.classList.add('hidden');
+  leftBox.classList.remove('hidden');
+  rightSide.classList.remove('hidden');
 }
