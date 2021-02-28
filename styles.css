@@ -224,13 +224,15 @@ label[type=text] {
   margin: 10% auto;
   border-radius: 5px;
   height: 36vh;
-  width: 35vh;
+  width: 64vh;
   position: absolute;
-  transition: all 5s ease-in-out;
   border: 2px solid #1F1F3D;
 }
 
 .popup-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   max-height: 100%;
   overflow: auto;
   position: fixed;
@@ -243,6 +245,39 @@ label[type=text] {
   left: 0;
   top: 0;
 
+}
+
+.comment-input {
+  width: 100%;
+  height: 75%;
+  background-color: #FFFFFF;
+}
+
+.save-popup {
+  background-color: #353567;
+  border:  2px solid #595CA6;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #EAEAF4;
+  font-weight: 300;
+  font-size: 1em;
+  padding: 1%;
+}
+
+.pop-button-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-label {
+  background-color: #353567;
+  color: #EAEAF4;
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  align-items: center;
+  height: 12.5%;
+  width: 100%;
 }
 
 .hidden {
