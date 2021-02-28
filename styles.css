@@ -218,3 +218,7 @@ label[type=text] {
   color: #E9E9F3;
   font-weight: bold;
 }
+
+.hidden {
+  display: none !important;
+}
