@@ -211,14 +211,14 @@ function createComment(event) {
 
 function showCommentForm() {
   commentForm.classList.remove('hidden');
-  leftBox.classList.add('hidden');
-  rightSide.classList.add('hidden');
+  // leftBox.classList.add('hidden');
+  // rightSide.classList.add('hidden');
 }
 
 function showMain() {
   commentForm.classList.add('hidden');
-  leftBox.classList.remove('hidden');
-  rightSide.classList.remove('hidden');
+  // leftBox.classList.remove('hidden');
+  // rightSide.classList.remove('hidden');
 }
 
 function postComment() {

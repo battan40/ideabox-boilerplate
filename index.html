@@ -31,13 +31,19 @@
       </section>
       <section class="grid-box" id="ideaParent">
       </section>
+
     </div>
-    <form class="hidden comment-form" id="commentForm">
-      <label class="comment-label">Comment</label>
-      <input type="text" id="commentInput">
-      <button class="save" type="button" id="submitComment">Post Comment</button>
-      <button class="save" type="button" id="takeMeBack">Take Me Back!</button>
-    </form>
+
+    <section class="popup-wrapper hidden"id="commentForm">
+      <form class="popup-form">
+        <label class="comment-label">Comment Here</label>
+        <textarea type="text" class="comment-input" id="commentInput"></textarea>
+        <button class="save" type="button" id="submitComment">Post Comment</button>
+        <button class="save" type="button" id="takeMeBack">Take Me Back!</button>
+      </form>
+    </section>
+
+
     <script src="./src/comment.js"></script>
     <script src="./src/idea.js"></script>
     <script src="./src/main.js"></script>
