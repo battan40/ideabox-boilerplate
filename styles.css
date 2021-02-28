@@ -122,12 +122,6 @@ label[type=text] {
   cursor: pointer;
 }
 
-.disabled-button {
-  background-color: #EAEAF4;
-  color: #BFBFDD;
-  cursor: not-allowed;
-
-}
 
 .mini-search-box {
   display: flex;
@@ -287,4 +281,11 @@ label[type=text] {
 
 .hidden {
   display: none;
+}
+
+.disabled-button {
+  background-color: #EAEAF4;
+  color: #BFBFDD;
+  cursor: not-allowed;
+
 }

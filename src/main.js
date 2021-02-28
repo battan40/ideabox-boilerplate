@@ -20,6 +20,7 @@ saveButton.addEventListener('click', createIdeaCard);
 window.addEventListener('load', retrieveAllStorage);
 titleInput.addEventListener('keyup', checkInputFields);
 bodyInput.addEventListener('keyup', checkInputFields);
+commentInput.addEventListener('keyup', checkCommentField);
 ideaParent.addEventListener('click', function() {
   checkTarget(event);
 });
@@ -169,7 +170,8 @@ function updateIdeaArray(id) {
 }
 
 function retrieveAllStorage() {
-  checkInputFields()
+  checkInputFields();
+  checkInputFields();
   cardIDs = Object.keys(localStorage);
   for (i = 0; i < cardIDs.length; i++) {
     var parsed = JSON.parse(localStorage.getItem(cardIDs[i]));
@@ -211,7 +213,18 @@ function createComment(event) {
 }
 
 function showCommentForm() {
+  checkCommentField();
   commentForm.classList.remove('hidden');
+}
+
+function checkCommentField() {
+  if(/\S/.test(commentInput.value)) {
+    submitComment.disabled = false;
+    submitComment.classList.remove('disabled-button');
+  } else {
+    submitComment.disabled = true;
+    submitComment.classList.add('disabled-button');
+  }
 }
 
 function showMain() {
