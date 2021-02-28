@@ -223,10 +223,11 @@ label[type=text] {
 .popup-form {
   margin: 10% auto;
   border-radius: 5px;
-  height: 36vh;
-  width: 64vh;
+  height: 38vh;
+  width: 68vh;
   position: absolute;
   border: 2px solid #1F1F3D;
+  background-color: #E9E9F3;
 }
 
 .popup-wrapper {
@@ -250,7 +251,10 @@ label[type=text] {
 .comment-input {
   width: 100%;
   height: 75%;
-  background-color: #FFFFFF;
+  background-color: #EAEAF4;
+  resize: none;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .save-popup {
@@ -262,6 +266,7 @@ label[type=text] {
   font-weight: 300;
   font-size: 1em;
   padding: 1%;
+  height: 100%;
 }
 
 .pop-button-box {

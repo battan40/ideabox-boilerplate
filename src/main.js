@@ -46,7 +46,7 @@ function createNewIdea() {
 function addNewIdea(newIdea) {
     savedIdeas.push(newIdea);
     newIdea.saveToStorage();
-  }
+}
 
 function renderIdeaCard(array) {
   ideaParent.innerHTML = "";
@@ -67,7 +67,7 @@ function renderIdeaCard(array) {
       </section>
       <section class="idea-box-footer">
         <img class="idea-comment-img" id="commentButton" src="./assets/comment.svg" alt="A comment button">
-        <p class="idea-comment">${array[i].comment}</p>
+        <p class="idea-comment">Comment</p>
       </section>
     </article>`
   }
@@ -101,6 +101,7 @@ function changeStarButtonText() {
 function clearInputFields() {
   titleInput.value  = "";
   bodyInput.value = "";
+  commentInput.value = "";
 }
 
 function checkInputFields() {
@@ -167,7 +168,6 @@ function updateIdeaArray(id) {
   }
 }
 
-
 function retrieveAllStorage() {
   checkInputFields()
   cardIDs = Object.keys(localStorage);
@@ -204,6 +204,7 @@ function showsFilteredIdeas(array) {
     renderIdeaCard(array);
   }
 }
+
 function createComment(event) {
   cardIDGlobal = event.target.parentElement.parentElement.id;
   showCommentForm();
@@ -211,19 +212,17 @@ function createComment(event) {
 
 function showCommentForm() {
   commentForm.classList.remove('hidden');
-  // leftBox.classList.add('hidden');
-  // rightSide.classList.add('hidden');
 }
 
 function showMain() {
   commentForm.classList.add('hidden');
-  // leftBox.classList.remove('hidden');
-  // rightSide.classList.remove('hidden');
+  clearInputFields();
 }
 
 function postComment() {
   var comment = new Comment(commentInput.value);
   var cardIndex = findIdeaIndex(cardIDGlobal);
   savedIdeas[cardIndex].comment.push(comment);
-  console.log(savedIdeas[cardIndex]);
+  savedIdeas[cardIndex].saveToStorage();
+  showMain();
 }
