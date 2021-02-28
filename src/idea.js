@@ -4,6 +4,7 @@ class Idea {
     this.body = body;
     this.id = id || Date.now();
     this.star = star || false;
+    this.comment = []
   }
 
   saveToStorage() {
