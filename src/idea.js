@@ -1,9 +1,9 @@
 class Idea {
-  constructor(title, body, array) {
+  constructor(title, body, id, star) {
     this.title = title;
     this.body = body;
-    this.id = this.generateRdmId(array);
-    this.star = false;
+    this.id = id || Date.now();
+    this.star = star || false;
   }
 
   saveToStorage() {
@@ -21,15 +21,6 @@ class Idea {
     } else {
       this.star = true;
     }
-  }
-
-  generateRdmId(array) {
-    if (array.length === 0) {
-      var rdmId = 1;
-    } else {
-      var arrayLength = array.length - 1;
-      var rdmId = array[arrayLength].id + 1;
-    }
-    return rdmId;
+    this.saveToStorage();
   }
 }
