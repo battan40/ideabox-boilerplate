@@ -8,12 +8,13 @@ var searchInput = document.querySelector('#searchInput');
 var commentForm = document.querySelector('#commentForm');
 var leftBox = document.querySelector('#leftBox');
 var rightSide = document.querySelector('#rightSide');
-var commentButton = document.querySelector('#commentButton');
+var submitComment = document.querySelector('#submitComment');
 var takeMeBackButton = document.querySelector('#takeMeBack');
 var commentInput = document.querySelector('#commentInput');
 
 var savedIdeas = [];
 var showFavoriteIdeas = false;
+var cardIDGlobal
 
 saveButton.addEventListener('click', createIdeaCard);
 window.addEventListener('load', retrieveAllStorage);
@@ -25,6 +26,7 @@ ideaParent.addEventListener('click', function() {
 showFavoriteButton.addEventListener('click', findFavorites);
 searchInput.addEventListener('keyup', filterIdeas);
 takeMeBackButton.addEventListener('click', showMain);
+submitComment.addEventListener('click', postComment);
 
 
 function createIdeaCard() {
@@ -65,7 +67,7 @@ function renderIdeaCard(array) {
       </section>
       <section class="idea-box-footer">
         <img class="idea-comment-img" id="commentButton" src="./assets/comment.svg" alt="A comment button">
-        <p class="idea-comment">Comment</p>
+        <p class="idea-comment">${array[i].comment}</p>
       </section>
     </article>`
   }
@@ -128,7 +130,7 @@ function checkTarget(event) {
   } else if (event.target.classList.contains("idea-favorite")) {
     favoriteIdea(event);
   } else if (event.target.classList.contains("idea-comment-img")) {
-    showCommentForm()
+    createComment(event);
   }
 }
 
@@ -202,6 +204,10 @@ function showsFilteredIdeas(array) {
     renderIdeaCard(array);
   }
 }
+function createComment(event) {
+  cardIDGlobal = event.target.parentElement.parentElement.id;
+  showCommentForm();
+}
 
 function showCommentForm() {
   commentForm.classList.remove('hidden');
@@ -213,4 +219,11 @@ function showMain() {
   commentForm.classList.add('hidden');
   leftBox.classList.remove('hidden');
   rightSide.classList.remove('hidden');
+}
+
+function postComment() {
+  var comment = new Comment(commentInput.value);
+  var cardIndex = findIdeaIndex(cardIDGlobal);
+  savedIdeas[cardIndex].comment.push(comment);
+  console.log(savedIdeas[cardIndex]);
 }

@@ -1,7 +1,7 @@
 class Comment {
   constructor(comment) {
     this.comment = comment;
-    this.id = Date.now;
+    this.id = Date.now();
   }
 
 
