@@ -5,8 +5,9 @@ var ideaParent = document.querySelector('#ideaParent');
 var ideasGrid = document.querySelector('#ideasGrid');
 var showFavoriteButton = document.querySelector('#showStarred');
 var searchInput = document.querySelector('#searchInput');
-var commentForm = document.querySelector('commentForm');
+var commentForm = document.querySelector('#commentForm');
 var commentButton = document.querySelector('#commentButton');
+var takeMeBackButton = document.querySelector('#takeMeBack');
 var commentInput = document.querySelector('#commentInput');
 
 var savedIdeas = [];
