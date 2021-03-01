@@ -8,14 +8,14 @@
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body class="main">
-    <section class="left-box">
+    <section class="left-box" id="leftBox">
       <h1 class="left-title">IdeaBox</h1>
       <div class="filter-starred">
         <h4 class="left-filter">Filter Starred Ideas</h4>
         <button type="button" class="show-starred-button" id="showStarred">Show Starred Ideas</button>
       </div>
     </section>
-    <div class="right-whole-side">
+    <div class="right-whole-side" id="rightSide">
       <section class="top-form-box">
         <form class="form-box">
           <label class="label">Title</label>
@@ -32,6 +32,17 @@
       <section class="grid-box" id="ideaParent">
       </section>
     </div>
+    <section class="popup-wrapper hidden" id="commentForm">
+      <form class="popup-form" id="popupForm">
+        <label class="comment-label">Comment Here</label>
+        <textarea type="text" class="comment-input" id="commentInput"></textarea>
+        <section class="pop-button-box">
+          <button class="save-popup" type="button" id="submitComment">Post Comment</button>
+          <button class="save-popup" type="button" id="takeMeBack">Take Me Back!</button>
+        </section>
+      </form>
+    </section>
+    <script src="./src/comment.js"></script>
     <script src="./src/idea.js"></script>
     <script src="./src/main.js"></script>
   </body>

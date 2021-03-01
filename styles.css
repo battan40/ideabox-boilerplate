@@ -122,12 +122,6 @@ label[type=text] {
   cursor: pointer;
 }
 
-.disabled-button {
-  background-color: #EAEAF4;
-  color: #BFBFDD;
-  cursor: not-allowed;
-
-}
 
 .mini-search-box {
   display: flex;
@@ -189,7 +183,8 @@ label[type=text] {
   width: 100%;
 }
 
-.idea-card-inner {
+.idea-card-inner,
+.comment-display-box {
   width: 100%;
   height: 75%;
   background-color: #FFFFFF;
@@ -217,4 +212,87 @@ label[type=text] {
   padding-top: 2%;
   color: #E9E9F3;
   font-weight: bold;
+}
+.show-comments {
+  margin-left: 20%;
+  background-color: #E9E9F3;
+  color: #BFBFDD;
+  font-weight: 600;
+}
+
+/* ---- COMMENT-POP-UP ---- */
+.popup-form {
+  margin: 10% auto;
+  border-radius: 5px;
+  height: 38vh;
+  width: 68vh;
+  position: absolute;
+  border: 2px solid #1F1F3D;
+  background-color: #E9E9F3;
+}
+
+.popup-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-height: 100%;
+  overflow: auto;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease-out;
+}
+
+
+.comment-input {
+  width: 100%;
+  height: 75%;
+  background-color: #EAEAF4;
+  resize: none;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.save-popup {
+  background-color: #353567;
+  border:  2px solid #595CA6;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #EAEAF4;
+  font-weight: 300;
+  font-size: 1em;
+  padding: 1%;
+  height: 100%;
+}
+
+.pop-button-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-label {
+  background-color: #353567;
+  color: #EAEAF4;
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  align-items: center;
+  height: 12.5%;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.disabled-button {
+  background-color: #EAEAF4;
+  color: #BFBFDD;
+  cursor: not-allowed;
 }
