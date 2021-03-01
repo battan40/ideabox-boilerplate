@@ -160,6 +160,19 @@ function toggleCommentButtonText(button, commentSection) {
   }
 }
 
+function revealCommentCard(id) {
+  var ideaParent = document.getElementById(id);
+  var commentSection = ideaParent.firstElementChild.nextElementSibling.nextElementSibling;
+  var button = commentSection.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling;
+  if (commentSection.classList.contains('hidden')) {
+    toggleCommentSection(commentSection);
+    toggleCommentButtonText(button, commentSection);
+  }
+  var idea = savedIdeas[findIdeaIndex(ideaParent.id)];
+  console.log(idea);
+  generateComments(idea, commentSection);
+}
+
 function generateComments(idea, commentSection) {
   commentSection.innerHTML = "";
   for (var i = 0; i < idea.comment.length; i++) {
@@ -201,7 +214,6 @@ function updateIdeaArray(id) {
 }
 
 function retrieveAllStorage() {
-  checkInputFields();
   checkInputFields();
   cardIDs = Object.keys(localStorage);
   for (i = 0; i < cardIDs.length; i++) {
@@ -269,4 +281,5 @@ function postComment() {
   savedIdeas[cardIndex].comment.push(comment);
   savedIdeas[cardIndex].saveToStorage();
   showMain();
+  revealCommentCard(popupForm.id);
 }
