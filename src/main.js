@@ -66,7 +66,7 @@ function renderIdeaCard(array) {
         <h3 class="idea-title">${array[i].title}</h3>
         <p class="idea-body">${array[i].body}</p>
       </section>
-      <section class="comment-display-box">
+      <section class="comment-display-box hidden">
       </section>
       <section class="idea-box-footer">
         <img class="idea-comment-img" id="commentButton" src="./assets/comment.svg" alt="A comment button">
@@ -142,8 +142,8 @@ function checkTarget(event) {
 }
 
 function showCommentCard(event) {
-  console.log(event.target.parentElement.previousSibling.previousSibling);
-  console.log(event.target.parentElement.previousSibling.previousSibling);
+  event.target.parentElement.previousElementSibling.classList.toggle('hidden');
+  event.target.parentElement.previousElementSibling.previousElementSibling.classList.toggle('hidden');
 }
 
 function deleteIdea(event) {

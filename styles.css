@@ -183,7 +183,8 @@ label[type=text] {
   width: 100%;
 }
 
-.idea-card-inner {
+.idea-card-inner,
+.comment-display-box {
   width: 100%;
   height: 75%;
   background-color: #FFFFFF;
