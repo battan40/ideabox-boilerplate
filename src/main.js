@@ -149,8 +149,10 @@ function showCommentCard(event) {
 }
 
 function generateComments(idea, commentSection) {
-  console.log(commentSection);
-  console.log(idea.comment);
+  commentSection.innerHTML = "";
+  for (var i = 0; i < idea.comment.length; i++) {
+    commentSection.innerHTML += `<p>${idea.comment[i].comment}</p>`;
+  }
 }
 
 function deleteIdea(event) {
