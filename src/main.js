@@ -144,6 +144,13 @@ function checkTarget(event) {
 function showCommentCard(event) {
   event.target.parentElement.previousElementSibling.classList.toggle('hidden');
   event.target.parentElement.previousElementSibling.previousElementSibling.classList.toggle('hidden');
+  var idea = savedIdeas[findIdeaIndex(event.target.parentElement.parentElement.id)];
+  generateComments(idea, event.target.parentElement.previousElementSibling);
+}
+
+function generateComments(idea, commentSection) {
+  console.log(commentSection);
+  console.log(idea.comment);
 }
 
 function deleteIdea(event) {
@@ -185,7 +192,7 @@ function retrieveAllStorage() {
   cardIDs = Object.keys(localStorage);
   for (i = 0; i < cardIDs.length; i++) {
     var parsed = JSON.parse(localStorage.getItem(cardIDs[i]));
-    var newIdea = new Idea(parsed.title, parsed.body, parsed.id, parsed.star);
+    var newIdea = new Idea(parsed);
     savedIdeas.unshift(newIdea);
   }
   renderIdeaCard(savedIdeas);
