@@ -12,9 +12,9 @@ var submitComment = document.querySelector('#submitComment');
 var takeMeBackButton = document.querySelector('#takeMeBack');
 var commentInput = document.querySelector('#commentInput');
 var showComment = document.querySelector('#showComments');
+var popupForm = document.querySelector('#popupForm');
 
 var savedIdeas = [];
-var cardIDGlobal;
 
 saveButton.addEventListener('click', createIdeaCard);
 window.addEventListener('load', retrieveAllStorage);
@@ -239,7 +239,7 @@ function showsFilteredIdeas(array) {
 }
 
 function createComment(event) {
-  cardIDGlobal = event.target.parentElement.parentElement.id;
+  popupForm.id = event.target.parentElement.parentElement.id;
   showCommentForm();
 }
 
@@ -265,7 +265,7 @@ function showMain() {
 
 function postComment() {
   var comment = new Comment(commentInput.value);
-  var cardIndex = findIdeaIndex(cardIDGlobal);
+  var cardIndex = findIdeaIndex(popupForm.id);
   savedIdeas[cardIndex].comment.push(comment);
   savedIdeas[cardIndex].saveToStorage();
   showMain();
