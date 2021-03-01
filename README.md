@@ -43,3 +43,13 @@
 * `locaStorage` should be utilized to filter through saved, and deleted information from the search bar, to optimize user interface
 * Employing another `class data model`, the user should be able to add comments to their idea cards, save those comments and access them for review at any time.
 * The app should be functioning bug-free at each iteration of use
+## Road Map
+
+##### Future Iterations Should Include:
+
+* A login page for user idea security
+* Animation for idea view to comment view using CSS styling
+* A message that lets the user know their idea has been saved
+* As contributors and developers it would benefit us to Individually use the app often, to more intrinsically and empathically understand what the user might need
+
+## Preview
