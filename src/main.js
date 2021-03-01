@@ -14,8 +14,7 @@ var commentInput = document.querySelector('#commentInput');
 var showComment = document.querySelector('#showComments');
 
 var savedIdeas = [];
-var showFavoriteIdeas = false;
-var cardIDGlobal
+var cardIDGlobal;
 
 saveButton.addEventListener('click', createIdeaCard);
 window.addEventListener('load', retrieveAllStorage);
@@ -37,10 +36,11 @@ function createIdeaCard() {
     renderIdeaCard(savedIdeas);
     clearInputFields();
     checkInputFields();
+    showFavoriteButton.innerText = "Show Starred Ideas";
 }
 
 function createNewIdea() {
-  var newIdea = new Idea(titleInput.value, bodyInput.value);
+  var newIdea = new Idea({title: titleInput.value, body: bodyInput.value});
   return newIdea;
 }
 
@@ -79,9 +79,8 @@ function renderIdeaCard(array) {
 
 function findFavorites() {
   event.preventDefault();
-  showFavoriteIdeas = !showFavoriteIdeas;
-  filterIdeas();
   changeStarButtonText();
+  filterIdeas();
 }
 
 function filterFavorites() {
@@ -95,7 +94,7 @@ function filterFavorites() {
 }
 
 function changeStarButtonText() {
-  if (showFavoriteIdeas) {
+  if (showFavoriteButton.innerText === "Show Starred Ideas") {
     showFavoriteButton.innerText = "Show All Ideas";
   } else {
     showFavoriteButton.innerText = "Show Starred Ideas";
@@ -215,7 +214,7 @@ function retrieveAllStorage() {
 
 function filterIdeas() {
   event.preventDefault();
-  if (showFavoriteIdeas) {
+  if (showFavoriteButton.innerText === "Show All Ideas") {
     showsFilteredIdeas(filterFavorites());
   } else {
     showsFilteredIdeas(savedIdeas);
