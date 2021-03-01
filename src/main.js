@@ -11,6 +11,7 @@ var rightSide = document.querySelector('#rightSide');
 var submitComment = document.querySelector('#submitComment');
 var takeMeBackButton = document.querySelector('#takeMeBack');
 var commentInput = document.querySelector('#commentInput');
+var showComment = document.querySelector('#showComments');
 
 var savedIdeas = [];
 var showFavoriteIdeas = false;
@@ -28,7 +29,6 @@ showFavoriteButton.addEventListener('click', findFavorites);
 searchInput.addEventListener('keyup', filterIdeas);
 takeMeBackButton.addEventListener('click', showMain);
 submitComment.addEventListener('click', postComment);
-
 
 function createIdeaCard() {
     event.preventDefault();
@@ -66,9 +66,12 @@ function renderIdeaCard(array) {
         <h3 class="idea-title">${array[i].title}</h3>
         <p class="idea-body">${array[i].body}</p>
       </section>
+      <section class="comment-display-box">
+      </section>
       <section class="idea-box-footer">
         <img class="idea-comment-img" id="commentButton" src="./assets/comment.svg" alt="A comment button">
         <p class="idea-comment">Comment</p>
+        <button class="show-comments" id="showComments">Show Comments</button>
       </section>
     </article>`
   }
@@ -133,7 +136,14 @@ function checkTarget(event) {
     favoriteIdea(event);
   } else if (event.target.classList.contains("idea-comment-img")) {
     createComment(event);
+  } else if (event.target.classList.contains("show-comments")) {
+    showCommentCard(event);
   }
+}
+
+function showCommentCard(event) {
+  console.log(event.target.parentElement.previousSibling.previousSibling);
+  console.log(event.target.parentElement.previousSibling.previousSibling);
 }
 
 function deleteIdea(event) {

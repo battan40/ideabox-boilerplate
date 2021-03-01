@@ -212,6 +212,12 @@ label[type=text] {
   color: #E9E9F3;
   font-weight: bold;
 }
+.show-comments {
+  margin-left: 20%;
+  background-color: #E9E9F3;
+  color: #BFBFDD;
+  font-weight: 600;
+}
 
 /* ---- COMMENT-POP-UP ---- */
 .popup-form {
@@ -239,8 +245,9 @@ label[type=text] {
   background-color: rgba(0, 0, 0, 0.4);
   left: 0;
   top: 0;
-
+  transition: all 0.3s ease-out;
 }
+
 
 .comment-input {
   width: 100%;
@@ -287,5 +294,4 @@ label[type=text] {
   background-color: #EAEAF4;
   color: #BFBFDD;
   cursor: not-allowed;
-
 }
