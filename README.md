@@ -23,3 +23,23 @@
 * Open it in your text editor
 * Read the `README.md`
 * In the terminal run the command `open index.html` for initial deployment and interaction with app
+
+## Project Links
+
+* [Repo](https://github.com/battan40/ideabox-boilerplate)
+* [Deployed Page](https://battan40.github.io/ideabox-boilerplate/)
+
+## Contributors
+
+* [Ryan Miller](https://github.com/Ryan-D-Miller)
+* [Matt Craig](https://github.com/mcraig2342)
+* [Angela Battillo](https://github.com/battan40)
+
+## Functionality Goals
+
+* Basic `JSON` and `localStorage` architecture in place inside the `Class` structure of a `data model` to best utilize `javaScript` to manage client-side interactions.
+* The user should be able to add their own ideas and save them
+* As a user one should be able to favorite and delete ideas
+* `locaStorage` should be utilized to filter through saved, and deleted information from the search bar, to optimize user interface
+* Employing another `class data model`, the user should be able to add comments to their idea cards, save those comments and access them for review at any time.
+* The app should be functioning bug-free at each iteration of use
