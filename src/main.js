@@ -142,10 +142,23 @@ function checkTarget(event) {
 }
 
 function showCommentCard(event) {
-  event.target.parentElement.previousElementSibling.classList.toggle('hidden');
-  event.target.parentElement.previousElementSibling.previousElementSibling.classList.toggle('hidden');
+  toggleCommentSection(event.target.parentElement.previousElementSibling);
+  toggleCommentButtonText(event.target, event.target.parentElement.previousElementSibling);
   var idea = savedIdeas[findIdeaIndex(event.target.parentElement.parentElement.id)];
   generateComments(idea, event.target.parentElement.previousElementSibling);
+}
+
+function toggleCommentSection(commentSection) {
+  commentSection.classList.toggle('hidden');
+  commentSection.previousElementSibling.classList.toggle('hidden');
+}
+
+function toggleCommentButtonText(button, commentSection) {
+  if (commentSection.classList.contains('hidden')) {
+    button.innerText = "Show Comments";
+  } else {
+    button.innerText = "Show Idea";
+  }
 }
 
 function generateComments(idea, commentSection) {
