@@ -238,9 +238,9 @@ function showsFilteredIdeas(array) {
     var filteredIdeas = [];
     for(var i = 0; i < array.length; i++)
     {
-      if(array[i].title.includes(searchInput.value)) {
+      if(array[i].title.toUpperCase().includes(searchInput.value.toUpperCase())) {
         filteredIdeas.push(array[i]);
-      } else if (array[i].body.includes(searchInput.value)) {
+      } else if (array[i].body.toUpperCase().includes(searchInput.value.toUpperCase())) {
         filteredIdeas.push(array[i]);
       }
     }
