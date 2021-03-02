@@ -41,15 +41,27 @@
 * The user should be able to add their own ideas and save them
 * As a user one should be able to favorite and delete ideas
 * `locaStorage` should be utilized to filter through saved, and deleted information from the search bar, to optimize user interface
-* Employing another `class data model`, the user should be able to add comments to their idea cards, save those comments and access them for review at any time.
+* Employing another `class` `data model`, the user should be able to add comments to their idea cards, save those comments and access them for review at any time.
 * The app should be functioning bug-free at each iteration of use
 ## Road Map
 
 ##### Future Iterations Should Include:
 
 * A login page for user idea security
-* Animation for idea view to comment view using CSS styling
+* Animation for idea view to comment view using `CSS` styling
 * A message that lets the user know their idea has been saved
 * As contributors and developers it would benefit us to Individually use the app often, to more intrinsically and empathically understand what the user might need
+* Detail error handling of all delete functionality
 
 ## Preview
+<p align="left">Create Idea Page</br>
+ <img width="1000" height="500" src="./assets/IdeaMain.png">
+</p>
+
+<p align="left">Comment Form</br>
+ <img width="1000" height="500" src="./assets/commentForm.png">
+</p>
+
+<p align="left">Favorites and Shown Comments</br>
+ <img width="1000" height="500" src="./assets/favoriteAndComment.png">
+</p>
