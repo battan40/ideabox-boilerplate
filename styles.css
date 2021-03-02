@@ -36,6 +36,7 @@ input[type="search"] {
   margin-bottom: 0;
   margin-right: 0;
   width: 100%;
+  height: auto;
 }
 
 /* ---- LEFT-BOX ---- */
@@ -44,7 +45,7 @@ input[type="search"] {
   flex-direction: column;
   background: #1F1F3D;
   color: #E9E9F3;
-  height: 330vh;
+  height: auto;
   width: 20%;
 }
 
@@ -81,6 +82,7 @@ input[type="search"] {
   display: flex;
   flex-direction: column;
   width: 80%;
+  height: auto;
 }
  .top-form-box   {
   display: flex;
@@ -163,10 +165,15 @@ input[type="search"] {
 }
 
 /* ---- IDEAS-GRID ---- */
+.grid-box-wrapper {
+  background-color: #EAEAF4;
+  height: auto;
+  width: 100%;
+}
+
 
 .grid-box {
-  background-color: #EAEAF4;
-  height: 280vh;
+  height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
