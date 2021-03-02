@@ -22,6 +22,12 @@ button {
 label[type=text] {
   color: #1F1F3D;
   font-size: 1em;
+
+}
+
+input[type="search"] {
+  font-size: 1.1em;
+  font-weight: lighter;
 }
 
 .main {
@@ -29,6 +35,9 @@ label[type=text] {
   margin-top: 0;
   margin-bottom: 0;
   margin-right: 0;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
 }
 
 /* ---- LEFT-BOX ---- */
@@ -37,14 +46,16 @@ label[type=text] {
   flex-direction: column;
   background: #1F1F3D;
   color: #E9E9F3;
-  height: 150vh;
-  width: 37vh;
+  height: auto;
+  min-height: 40vh;
+  width: 25%;
 }
 
 .left-title {
   font-weight: bold;
   padding: 1% 63% 10% 2%;
   margin: 5% 25% 5% 1%;
+  font-size: 2em;
 }
 
 .left-filter {
@@ -52,13 +63,15 @@ label[type=text] {
   margin-top: 7%;
   display: flex;
   padding: 1% 5% 10% 5%;
+  font-size: 1.6em;
+  color: #BFBFDD;
 }
 
 .show-starred-button {
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-weight: bold;
-  padding: 3% 5% 3% 5%;
-  margin: 0 0 10% 5%;
+  padding: 3% 9% 3% 9%;
+  margin: 0 0 10% 10%;
   background-color: #5356A4;
   color: #E9E9F3;
 }
@@ -66,19 +79,22 @@ label[type=text] {
 .filter-starred {
   border-top: 1px solid #5356A4;
   border-bottom: 1px solid #5356A4;
+  width: 100%;
 }
 
 /* ---- RIGHT-FORM ---- */
 .right-whole-side {
   display: flex;
   flex-direction: column;
+  width: 75%;
+  height: auto;
 }
  .top-form-box   {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 50vh;
-  width: 160vh;
+  height: 60vh;
+  width: 100%;
   margin-right: 0;
   background-color: #A9AAD2;
 }
@@ -87,27 +103,33 @@ label[type=text] {
   color: #1F1F3D;
   margin: 5% 20% 1% 0;
   font-weight: bold;
+  font-size: 1.6em;
 }
 
 .form-box {
   margin-top: 1%;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 45%;
 }
 
 .title-input {
   border:  2px solid #595CA6;
   padding: 2%;
   border-radius: 3px;
+  font-size: 1.1em;
+  height: 6vh;
 }
 
 .body-input {
-  height: 10vh;
+  height: 12vh;
   border: 2px solid #595CA6;
   font-family: 'Open Sans', sans-serif;
   resize: none;
   border-radius: 3px;
+  padding: 2%;
+  font-size: 1.1em;
+  color: #1F1F3D;
 }
 
 .save {
@@ -116,7 +138,7 @@ label[type=text] {
   color: #EAEAF4;
   height: 6vh;
   font-weight: 500;
-  font-size: 1.3em;
+  font-size: 1.6em;
   border:  2px solid #595CA6;
   border-radius: 3px;
   cursor: pointer;
@@ -128,9 +150,9 @@ label[type=text] {
 }
 
 .magnifying-glass-button {
-  height: 6vh;
+  height: 7vh;
   width: 8vh;
-  padding: 2.5%;
+  padding: 2.5% 2.5% 2% 2.5%;
   background-color: #353567;
   color: #EAEAF4;
   border:  2px solid #595CA6;
@@ -141,24 +163,30 @@ label[type=text] {
 .search-input {
   border:  2px solid #595CA6;
   border-radius: 3px;
-  height: 6vh;
+  height: 7vh;
   width: 63vh;
   border-left: none;
   font-size: 1em;
-  color: #EAEAF4;
+  color: #1F1F3D;
   padding-left: 2%;
 }
 
 /* ---- IDEAS-GRID ---- */
+.grid-box-wrapper {
+  background-color: #EAEAF4;
+  height: auto;
+  min-height: 60vh;
+  width: 100%;
+}
+
 
 .grid-box {
-  background-color: #EAEAF4;
-  height: 100vh;
-  width: 160vh;
+  height: 100%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
-  padding: 20px;
+  padding: 3%;
 }
 
 .delete-idea,
@@ -168,14 +196,14 @@ label[type=text] {
 }
 
 .ideas-display {
-  height: 36vh;
-  width: 35vh;
+  height: 40vh;
+  width: 38vh;
   border: 2px solid #1F1F3D;
 
 }
 
 .idea-header {
-  background-color: #353567;
+  background-color: #1F1F35;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -206,6 +234,16 @@ label[type=text] {
 
 .idea-body {
   font-size: 1.2em;
+  overflow-y: scroll;
+  height: 70%;
+  width: 100%;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  resize: none;
+  border-radius: 3px;
+  padding: 2%;
+  font-size: 1.1em;
+  color: #1F1F3D;
 }
 
 .idea-comment {
@@ -213,11 +251,17 @@ label[type=text] {
   color: #E9E9F3;
   font-weight: bold;
 }
+
 .show-comments {
-  margin-left: 20%;
-  background-color: #E9E9F3;
+  text-align: center;
+  background-color: #1F1F35;
   color: #BFBFDD;
   font-weight: 600;
+  margin-left: 20%;
+  width: 40%;
+  height: 100%;
+  line-height: 1.1em;
+
 }
 
 /* ---- COMMENT-POP-UP ---- */
