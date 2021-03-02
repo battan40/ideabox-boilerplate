@@ -178,7 +178,7 @@ input[type="search"] {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
-  padding: 20px;
+  padding: 3%;
 }
 
 /* .grid-box::after {
@@ -194,8 +194,8 @@ input[type="search"] {
 }
 
 .ideas-display {
-  height: 36vh;
-  width: 35vh;
+  height: 40vh;
+  width: 38vh;
   border: 2px solid #1F1F3D;
 
 }
