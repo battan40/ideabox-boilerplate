@@ -46,7 +46,7 @@ input[type="search"] {
   background: #1F1F3D;
   color: #E9E9F3;
   height: auto;
-  width: 20%;
+  width: 25%;
 }
 
 .left-title {
@@ -63,9 +63,9 @@ input[type="search"] {
 }
 
 .show-starred-button {
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-weight: bold;
-  padding: 3% 5% 3% 5%;
+  padding: 3% 9% 3% 9%;
   margin: 0 0 10% 10%;
   background-color: #5356A4;
   color: #E9E9F3;
@@ -74,14 +74,14 @@ input[type="search"] {
 .filter-starred {
   border-top: 1px solid #5356A4;
   border-bottom: 1px solid #5356A4;
-  width: 37vh;
+  width: 100%;
 }
 
 /* ---- RIGHT-FORM ---- */
 .right-whole-side {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 75%;
   height: auto;
 }
  .top-form-box   {
@@ -201,7 +201,7 @@ input[type="search"] {
 }
 
 .idea-header {
-  background-color: #353567;
+  background-color: #1F1F35;
   display: flex;
   justify-content: space-between;
   align-items: center;
