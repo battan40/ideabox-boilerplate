@@ -232,6 +232,9 @@ input[type="search"] {
 
 .idea-body {
   font-size: 1.2em;
+  overflow-y: scroll;
+  height: 70%;
+  width: 100%;
   border: none;
   font-family: 'Open Sans', sans-serif;
   resize: none;

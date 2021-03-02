@@ -65,7 +65,7 @@ function renderIdeaCard(array) {
       </section>
       <section class="idea-card-inner">
         <h3 class="idea-title">${array[i].title}</h3>
-        <textarea class="idea-body">${array[i].body}</textarea>
+        <p class="idea-body">${array[i].body}</p>
       </section>
       <section class="comment-display-box hidden">
       </section>
