@@ -26,10 +26,11 @@ ideaParent.addEventListener('click', function() {
 });
 showFavoriteButton.addEventListener('click', findFavorites);
 searchInput.addEventListener('keyup', filterIdeas);
+searchInput.addEventListener('search', filterIdeas);
 takeMeBackButton.addEventListener('click', showMain);
 submitComment.addEventListener('click', postComment);
 
-function createIdeaCard() {
+function createIdeaCard(event) {
     event.preventDefault();
     var newIdea = createNewIdea();
     addNewIdea(newIdea);
@@ -169,7 +170,6 @@ function revealCommentCard(id) {
     toggleCommentButtonText(button, commentSection);
   }
   var idea = savedIdeas[findIdeaIndex(ideaParent.id)];
-  console.log(idea);
   generateComments(idea, commentSection);
 }
 
