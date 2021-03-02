@@ -53,6 +53,7 @@ input[type="search"] {
   font-weight: bold;
   padding: 1% 63% 10% 2%;
   margin: 5% 25% 5% 1%;
+  font-size: 2em;
 }
 
 .left-filter {
@@ -60,6 +61,8 @@ input[type="search"] {
   margin-top: 7%;
   display: flex;
   padding: 1% 5% 10% 5%;
+  font-size: 1.6em;
+  color: #BFBFDD;
 }
 
 .show-starred-button {
@@ -88,7 +91,7 @@ input[type="search"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 50vh;
+  height: 60vh;
   width: 100%;
   margin-right: 0;
   background-color: #A9AAD2;
@@ -98,13 +101,14 @@ input[type="search"] {
   color: #1F1F3D;
   margin: 5% 20% 1% 0;
   font-weight: bold;
+  font-size: 1.6em;
 }
 
 .form-box {
   margin-top: 1%;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 45%;
 }
 
 .title-input {
@@ -112,10 +116,11 @@ input[type="search"] {
   padding: 2%;
   border-radius: 3px;
   font-size: 1.1em;
+  height: 6vh;
 }
 
 .body-input {
-  height: 10vh;
+  height: 12vh;
   border: 2px solid #595CA6;
   font-family: 'Open Sans', sans-serif;
   resize: none;
@@ -131,7 +136,7 @@ input[type="search"] {
   color: #EAEAF4;
   height: 6vh;
   font-weight: 500;
-  font-size: 1.3em;
+  font-size: 1.6em;
   border:  2px solid #595CA6;
   border-radius: 3px;
   cursor: pointer;
@@ -143,9 +148,9 @@ input[type="search"] {
 }
 
 .magnifying-glass-button {
-  height: 6vh;
+  height: 7vh;
   width: 8vh;
-  padding: 2.5%;
+  padding: 2.5% 2.5% 2% 2.5%;
   background-color: #353567;
   color: #EAEAF4;
   border:  2px solid #595CA6;
@@ -156,7 +161,7 @@ input[type="search"] {
 .search-input {
   border:  2px solid #595CA6;
   border-radius: 3px;
-  height: 6vh;
+  height: 7vh;
   width: 63vh;
   border-left: none;
   font-size: 1em;
